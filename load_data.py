@@ -80,7 +80,7 @@ def main():
 
                 subjects_inserted.add(subject)
 
-            # Add sample and cell-count information
+            # Add sample and cell count information
             cursor.execute("""
                 INSERT INTO samples (
                     sample,
