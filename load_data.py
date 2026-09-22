@@ -1,7 +1,6 @@
-import pandas as pd
+import csv
 import sqlite3
 
-cell_counts = pd.read_csv("cell-count.csv")
 
 DB_FILE = "cell_counts.db"
 
@@ -43,66 +42,69 @@ def main():
 
     subjects_inserted = set()
 
-    # Load data into the database
-    for _, row in cell_counts.iterrows():
-        subject = row["subject"]
+    # Read the CSV file
+    with open("cell-count.csv", "r") as file:
+        reader = csv.DictReader(file)
 
-        # Add subject only once
-        if subject not in subjects_inserted:
-            response = row["response"]
+        for row in reader:
+            subject = row["subject"]
 
-            # Convert missing response to NULL
-            if pd.isna(response):
-                response = None
+            # Add subject only once
+            if subject not in subjects_inserted:
+                response = row["response"]
 
-            cursor.execute("""
-                INSERT INTO subjects (
+                # Convert missing response values to NULL
+                if response.strip().lower() in {"", "nan", "na", "null"}:
+                    response = None
+
+                cursor.execute("""
+                    INSERT INTO subjects (
+                        subject,
+                        project,
+                        condition,
+                        age,
+                        sex,
+                        treatment,
+                        response
+                    )
+                    VALUES (?, ?, ?, ?, ?, ?, ?)
+                """, (
                     subject,
-                    project,
-                    condition,
-                    age,
-                    sex,
-                    treatment,
+                    row["project"],
+                    row["condition"],
+                    int(row["age"]),
+                    row["sex"],
+                    row["treatment"],
                     response
+                ))
+
+                subjects_inserted.add(subject)
+
+            # Add sample and cell-count information
+            cursor.execute("""
+                INSERT INTO samples (
+                    sample,
+                    subject,
+                    sample_type,
+                    time_from_treatment_start,
+                    b_cell,
+                    cd8_t_cell,
+                    cd4_t_cell,
+                    nk_cell,
+                    monocyte
                 )
-                VALUES (?, ?, ?, ?, ?, ?, ?)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
+                row["sample"],
                 subject,
-                row["project"],
-                row["condition"],
-                int(row["age"]),
-                row["sex"],
-                row["treatment"],
-                response
+                row["sample_type"],
+                int(row["time_from_treatment_start"]),
+                int(row["b_cell"]),
+                int(row["cd8_t_cell"]),
+                int(row["cd4_t_cell"]),
+                int(row["nk_cell"]),
+                int(row["monocyte"])
             ))
-
-            subjects_inserted.add(subject)
-
-        # Add sample and cell-count information
-        cursor.execute("""
-            INSERT INTO samples (
-                sample,
-                subject,
-                sample_type,
-                time_from_treatment_start,
-                b_cell,
-                cd8_t_cell,
-                cd4_t_cell,
-                nk_cell,
-                monocyte
-            )
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, (
-            row["sample"],
-            subject,
-            row["sample_type"],
-            int(row["time_from_treatment_start"]),
-            int(row["b_cell"]),
-            int(row["cd8_t_cell"]),
-            int(row["cd4_t_cell"]),
-            int(row["nk_cell"]),
-            int(row["monocyte"])
-        ))
 
     # Save changes
     conn.commit()
@@ -120,6 +122,7 @@ def main():
     print(f"Subjects loaded: {subject_count}")
     print(f"Samples loaded: {sample_count}")
 
+    # Close the database connection
     conn.close()
 
 
