@@ -109,19 +109,6 @@ def main():
     # Save changes
     conn.commit()
 
-    # Verify the database
-    subject_count = cursor.execute(
-        "SELECT COUNT(*) FROM subjects"
-    ).fetchone()[0]
-
-    sample_count = cursor.execute(
-        "SELECT COUNT(*) FROM samples"
-    ).fetchone()[0]
-
-    print(f"Database created: {DB_FILE}")
-    print(f"Subjects loaded: {subject_count}")
-    print(f"Samples loaded: {sample_count}")
-
     # Close the database connection
     conn.close()
 
