@@ -44,7 +44,7 @@ for i in range(len(cell_counts)):
 
 
 #Display summary table of cell frequencies
-cell_freq
+print(cell_freq)
 
 
 # In[61]:
