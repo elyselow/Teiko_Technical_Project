@@ -12,6 +12,7 @@ import subprocess
 from pathlib import Path
 from scipy.stats import mannwhitneyu
 
+st.title("Immune Cell Population Analysis Interactive Dashboard")
 
 # In[9]:
 
