@@ -1,0 +1,5 @@
+pandas
+matplotlib==3.5.1
+scipy
+sqlite3
+streamlit
