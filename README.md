@@ -1,5 +1,6 @@
 Steps to Run Code:
 1. To run load_data.py by itself, use this command: python load_data.py
+
 1a. This will create a relational database schema using SQLite called cell_counts.db
 1b. Make sure that cell-count.csv is in the same directory when running this
 
