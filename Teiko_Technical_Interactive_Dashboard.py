@@ -9,12 +9,13 @@ import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
 import subprocess
+from pathlib import Path
 from scipy.stats import mannwhitneyu
 
 
 # In[9]:
 
-DB_FILE = "cell_counts.db"
+DB_FILE = Path("cell_counts.db")
 
 if not DB_FILE.exists():
     subprocess.run(["python", "load_data.py"], check=True)
