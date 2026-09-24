@@ -160,7 +160,7 @@ fig, ax = plt.subplots(figsize=(6, 5))
 
 ax.boxplot(
     [responder_data, non_responder_data],
-    labels=["Yes", "No"]
+    tick_labels=["Yes", "No"]
 )
 
 ax.set_title(
@@ -359,4 +359,6 @@ elif selected_category == "Sex":
     )
 
 conn.close()
+
+
 
