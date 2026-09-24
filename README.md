@@ -14,8 +14,11 @@ Steps to Run Code:
 4. Installed packages should work, but if not, use these package versions:
 
 4a. pandas: 3.0.6
+
 4b. matplotlib: 3.11.2
+
 4c. scipy: 1.18.1
+
 4d. streamlit: 1.64.0
 
 Note: Teiko_Technical_Assessment.ipynb is included in the GitHub repository for visual/debugging purposes and to show outputs more clearly (especially boxplots, which will not be shown just by running the Teiko_Technical_Assessment.py file due to the nature of the Codespace terminal but can be viewed in the Teiko_Technical_Assessment.ipynb file or the interactive dashboard).
