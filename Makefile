@@ -6,4 +6,4 @@ pipeline:
 	python Teiko_Technical_Assessment.py
 
 dashboard:
-	streamlit run Teiko_Technical_Interactive_Dashboard.py
+	python -m streamlit run Teiko_Technical_Interactive_Dashboard.py
