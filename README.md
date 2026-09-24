@@ -15,6 +15,6 @@ Steps to Run Code:
 
 4a. 
 
-Note: Teiko_Technical_Assessment.ipynb is included in the GitHub repository for visual/debugging purposes and to show outputs more clearly (especially boxplots, which will not be shown just by running the Teiko_Technical_Assessment.py file due to the nature of the Codespace terminal).
+Note: Teiko_Technical_Assessment.ipynb is included in the GitHub repository for visual/debugging purposes and to show outputs more clearly (especially boxplots, which will not be shown just by running the Teiko_Technical_Assessment.py file due to the nature of the Codespace terminal but can be viewed in the Teiko_Technical_Assessment.ipynb file or the interactive dashboard).
 
 Link to Dashboard: https://elyselow-teiko-tec-teiko-technical-interactive-dashboard-2wxzyg.streamlit.app/
