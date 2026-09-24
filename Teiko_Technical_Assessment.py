@@ -125,7 +125,7 @@ for population, percentages in cell_percentages.items():
 
 #Report cell populations that show significant differences 
 print(
-    "Cell populations with significant difference in relative frequencies "
+    "\n\nCell populations with significant difference in relative frequencies "
     "between responders and non-responders:",
     ", ".join(sig_populations)
 )           
@@ -156,7 +156,7 @@ cursor.execute("""
 project_counts = cursor.fetchall()
 
 #Print results
-print("Number of samples from each project:")
+print("\n\nNumber of samples from each project:")
 for project, count in project_counts:
     print(f"{project}: {count} samples")
 
@@ -181,7 +181,7 @@ cursor.execute("""
 response_counts = cursor.fetchall()
 
 #Print results
-print("Number of subjects who were responders/non-responders:")
+print("\n\nNumber of subjects who were responders/non-responders:")
 for response, count in response_counts:
     if response == "yes":
         label = "Responders"
@@ -212,7 +212,7 @@ cursor.execute("""
 sex_counts = cursor.fetchall()
 
 #Print results
-print("Number of subjects who were male/female:")
+print("\n\nNumber of subjects who were male/female:")
 for sex, count in sex_counts:
     if sex == "M":
         label = "Males"
@@ -237,5 +237,5 @@ melanoma_males = cell_counts[
     (cell_counts["time_from_treatment_start"] == 0)
 ]
 
-print(f"Average number of B cells: {melanoma_males['b_cell'].mean():.2f}")
+print(f"\n\nAverage number of B cells: {melanoma_males['b_cell'].mean():.2f}")
 
