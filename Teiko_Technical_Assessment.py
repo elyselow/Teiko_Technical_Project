@@ -104,7 +104,7 @@ for population, percentages in cell_percentages.items():
     plt.xlabel("Response")
     plt.ylabel("Percentage (%)")
 
-    plt.show()
+    plt.savefig(f"{population.replace(' ', '_')}_boxplot.png")
 
 
 # In[72]:
