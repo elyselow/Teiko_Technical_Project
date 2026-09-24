@@ -1,4 +1,4 @@
 pandas
-matplotlib==3.5.1
+matplotlib
 scipy
 streamlit
