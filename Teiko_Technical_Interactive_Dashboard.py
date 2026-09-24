@@ -8,11 +8,17 @@ import sqlite3
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
+from pathlib import Path
+import subprocess
 from scipy.stats import mannwhitneyu
 
 
 # In[9]:
 
+DB_FILE = Path(file).parent / "cell_counts.db"
+
+if not DB_FILE.exists():
+subprocess.run(["python", "load_data.py"], check=True)
 
 # Connect to database
 conn = sqlite3.connect("cell_counts.db")
