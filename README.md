@@ -21,6 +21,8 @@ Steps to Run Code:
 
 4d. streamlit: 1.64.0
 
-Note: Teiko_Technical_Assessment.ipynb is included in the GitHub repository for visual/debugging purposes and to show outputs more clearly (especially boxplots, which will not be shown just by running the Teiko_Technical_Assessment.py file due to the nature of the Codespace terminal but can be viewed in the Teiko_Technical_Assessment.ipynb file or the interactive dashboard).
+Note 1: Teiko_Technical_Assessment.ipynb is included in the GitHub repository for visual/debugging purposes and to show outputs more clearly (especially boxplots, which will not be shown just by running the Teiko_Technical_Assessment.py file due to the nature of the Codespace terminal but can be viewed in the Teiko_Technical_Assessment.ipynb file or the interactive dashboard).
+
+Note 2: If make dashboard is run before make pipeline, cell_counts.db will already be created in the repository environment since it is required to make the dashboard URL. Thus, cell_counts.db must be removed from the Codespaces environment before make pipeline is run to prevent "table already exists" error.
 
 Link to Dashboard: https://elyselow-teiko-tec-teiko-technical-interactive-dashboard-2wxzyg.streamlit.app/
