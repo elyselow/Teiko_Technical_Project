@@ -5,13 +5,13 @@ Steps to Run Code:
 
 1b. Make sure that cell-count.csv is in the same directory when running this
 
-2. To run Teiko_Technical_Assessment.py by itself, use this command: python Teiko_Technical_Assessment.py
+2. To run Teiko_Technical_Assessment.py (Python program/analysis script) by itself, use this command: python Teiko_Technical_Assessment.py
 
-2a. This will run the whole Python program (analysis script) which will produce the required outputs for parts 2-4 
+2a. This will produce the required outputs for parts 2-4 of the project instructions
 
 3. As stated in the project instructions, to run the whole project from start to finish, use this worklow: make setup --> make pipeline --> make dashboard
 
-4. Installed packages should work, but if not, use these package versions:
+4. Installed packages from requirements.txt should work, but if not, use these package versions:
 
 4a. pandas: 3.0.6
 
