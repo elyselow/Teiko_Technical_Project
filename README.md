@@ -14,15 +14,12 @@ Steps to Run Code:
 
 3. As stated in the project instructions, to run the whole project from start to finish, use this worklow: make setup --> make pipeline --> make dashboard
 
-5. Installed packages from requirements.txt should work, but if not, use these package versions:
+4. Installed packages from requirements.txt should work, but if not, use these package versions:
 
-4a. pandas: 3.0.6
-
-4b. matplotlib: 3.11.2
-
-4c. scipy: 1.18.1
-
-4d. streamlit: 1.64.0
+- pandas: 3.0.6
+- matplotlib: 3.11.2
+- scipy: 1.18.1
+- streamlit: 1.64.0
 
 
 Note 1: Teiko_Technical_Assessment.ipynb is included in the GitHub repository for optional visual/debugging purposes and to show outputs more clearly (especially boxplots, which will not be shown just by running the Teiko_Technical_Assessment.py file due to the nature of the Codespace terminal but can be viewed in the Teiko_Technical_Assessment.ipynb file or the interactive dashboard).
