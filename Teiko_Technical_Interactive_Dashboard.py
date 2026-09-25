@@ -86,8 +86,6 @@ cell_freq = cell_freq.sort_values(["sample", "population"]).reset_index(drop=Tru
 
 
 # Interactive filters
-st.subheader("Filter Results")
-
 selected_sample = st.selectbox(
     "Select a sample:",
     ["All"] + list(cell_freq["sample"].unique())
@@ -114,7 +112,7 @@ if selected_population != "All":
 
 
 # Display cell frequency summary table
-st.subheader("Cell Frequency Summary")
+st.subheader("Cell Relative Frequency Summary Table")
 
 st.dataframe(
     filtered_data,
