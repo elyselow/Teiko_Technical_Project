@@ -11,7 +11,7 @@ Steps to Run Code:
 
 1b. Make sure that cell-count.csv is in the same directory when running this
 
-2. To run Teiko_Technical_Assessment.py (Python program/analysis script) by itself, use this command: python Teiko_Technical_Assessment.py
+2. To run Teiko_Technical_Assessment.py by itself, use this command: python Teiko_Technical_Assessment.py
 
 2a. This will produce the required outputs for parts 2-4 of the project instructions
 
