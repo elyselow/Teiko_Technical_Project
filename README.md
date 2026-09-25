@@ -13,7 +13,7 @@ Steps to Run Code:
 
 2. To run Teiko_Technical_Assessment.py by itself, use this command: python Teiko_Technical_Assessment.py
 
-2a. This will produce the required outputs for parts 2-4 of the project instructions
+2a. This will produce the required outputs in terminal for parts 2-4 of the project instructions
 
 3. As stated in the project instructions, to run the whole project from start to finish, use this worklow: make setup --> make pipeline --> make dashboard
 
