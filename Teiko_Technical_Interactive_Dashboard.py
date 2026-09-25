@@ -16,6 +16,7 @@ st.title("Immune Cell Population Analysis Interactive Dashboard")
 
 # In[9]:
 
+# Generate cell_counts.db if not already in directory
 DB_FILE = Path("cell_counts.db")
 
 if not DB_FILE.exists():
@@ -41,9 +42,8 @@ subjects = pd.read_sql_query("""
 # In[ ]:
 
 
-# ============================================================
+
 # Part 2: Cell Type Relative Frequency
-# ============================================================
 
 st.header("Part 2: Cell Population Relative Frequencies")
 
@@ -61,7 +61,7 @@ cell_types = [
 samples["total_count"] = samples[cell_types].sum(axis=1)
 
 
-# Create summary table
+# Create cell frequency summary table
 cell_freq = samples.melt(
     id_vars=["sample", "total_count"],
     value_vars=cell_types,
@@ -70,11 +70,12 @@ cell_freq = samples.melt(
 )
 
 
-# Calculate percentage
+# Calculate cell relative frequency percentages
 cell_freq["percentage"] = (
     cell_freq["count"] / cell_freq["total_count"]
 ) * 100
 
+# Order table by all cell populations listed for a sample first
 cell_freq["population"] = pd.Categorical(
     cell_freq["population"],
     categories=cell_types,
@@ -112,7 +113,7 @@ if selected_population != "All":
     ]
 
 
-# Display summary table
+# Display cell frequency summary table
 st.subheader("Cell Frequency Summary")
 
 st.dataframe(
@@ -124,9 +125,8 @@ st.dataframe(
 # In[ ]:
 
 
-# ============================================================
+
 # Part 3: Responders vs Non-responders
-# ============================================================
 
 st.header("Part 3: Cell Frequencies of Responders vs Non-responders")
 
@@ -149,6 +149,13 @@ analysis_data = analysis_data[
     (analysis_data["response"].isin(["yes", "no"]))
 ]
 
+population_names = {
+    "b_cell": "B Cell",
+    "cd8_t_cell": "CD8 T Cell",
+    "cd4_t_cell": "CD4 T Cell",
+    "nk_cell": "NK Cell",
+    "monocyte": "Monocyte"
+}
 
 # Select cell population
 selected_part3_population = st.selectbox(
@@ -157,6 +164,7 @@ selected_part3_population = st.selectbox(
     key="part3_population"
 )
 
+population_name = population_names[selected_part3_population]
 
 # Get responder and non-responder percentages
 responder_data = analysis_data[
@@ -179,7 +187,7 @@ ax.boxplot(
 )
 
 ax.set_title(
-    f"{selected_part3_population} Relative Frequencies "
+    f"{population_name} Relative Frequencies "
     "for Responders vs. Non-Responders"
 )
 
@@ -198,13 +206,14 @@ statistic, p_value = mannwhitneyu(
 )
 
 st.subheader(
-    f"Statistical Test for Difference in {selected_part3_population} "
+    f"Statistical Test for Difference in {population_name} "
     "Relative Frequencies Between Responders vs. Non-responders"
 )
 
 st.write(f"Mann-Whitney U statistic: {statistic:.2f}")
 st.write(f"p-value: {p_value:.4f}")
 
+# Report results
 if p_value < 0.05:
     st.write("The difference is statistically significant (p < 0.05).")
 else:
@@ -214,10 +223,8 @@ else:
 # In[ ]:
 
 
-# ============================================================
-# Part 4: Baseline Melanoma PBMC Samples
-# ============================================================
 
+# Part 4: Baseline Melanoma PBMC Samples
 
 st.header("Part 4: Early Treatment Effects")
 
@@ -229,7 +236,7 @@ selected_category = st.selectbox(
 )
 
 
-# Sample counts by project
+# Filter data accordingly using database and get number of samples for each project
 if selected_category == "Project":
 
     cursor.execute("""
@@ -270,7 +277,7 @@ if selected_category == "Project":
     )
 
 
-# Subject counts by response
+# Filter data accordingly using database and get number of subjects who are responders/non-responders
 elif selected_category == "Response":
 
     cursor.execute("""
@@ -322,7 +329,7 @@ elif selected_category == "Response":
     )
 
 
-# Subject counts by sex
+# Filter data accordingly using database and get number of subjects who are males/females
 elif selected_category == "Sex":
 
     cursor.execute("""
