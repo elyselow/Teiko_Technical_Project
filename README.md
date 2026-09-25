@@ -1,7 +1,7 @@
 Python Script Descriptions:
 
 - Teiko_Technical_Assessment.py is the Python program/analysis script for parts 2-4 of the project instructions in .py format to run in bash
-- Teiko_Technical_Assessment.ipynb is the Python program/analysis script for parts 2-4 of the project instructions in .ipynb format for Jupyter notebook execution
+- Teiko_Technical_Assessment.ipynb is the Python program/analysis script for parts 2-4 of the project instructions in .ipynb format for optional Jupyter notebook execution
 - Teiko_Technical_Interactive_Dashboard.py is the Python script for generation of the Streamlit interactive dashboard in .py format to run in bash
 
 Steps to Run Code:
