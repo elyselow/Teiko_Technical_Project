@@ -8,8 +8,6 @@ Python Script Descriptions:
 Steps to Run Code:
 1. To run load_data.py by itself, use this command: python load_data.py
 
-1a. This will create a relational database schema using SQLite called cell_counts.db
-
 2. To run Teiko_Technical_Assessment.py by itself, use this command: python Teiko_Technical_Assessment.py
 
 2a. This will produce the required outputs in terminal for parts 2-4 of the project instructions
