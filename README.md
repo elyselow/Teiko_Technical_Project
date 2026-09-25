@@ -1,5 +1,6 @@
 Python Script Descriptions:
 
+- load_data.py is the Python script for creation of the relational database modeling the data in cell-count.csv using SQLite
 - Teiko_Technical_Assessment.py is the main Python analysis script for parts 2-4 of the project instructions in .py format to run in bash
 - Teiko_Technical_Assessment.ipynb is the main Python analysis script for parts 2-4 of the project instructions in .ipynb format for optional Jupyter notebook execution
 - Teiko_Technical_Interactive_Dashboard.py is the Python script for generation of the Streamlit interactive dashboard in .py format to run in bash
