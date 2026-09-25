@@ -195,7 +195,6 @@ for response, count in response_counts:
 
 
 #Filter data accordingly using database and get number of subjects who are males/females
-
 cursor.execute("""
     SELECT subjects.sex, COUNT(*)
     FROM samples
