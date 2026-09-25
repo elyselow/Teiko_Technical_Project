@@ -97,7 +97,7 @@ for population, percentages in cell_percentages.items():
 
     plt.boxplot(
         [percentages["yes"], percentages["no"]],
-        labels=["Yes", "No"]
+        tick_labels=["Yes", "No"]
     )
 
     plt.title(f"{population} Relative Frequency for Responders vs. Non-Responders")
