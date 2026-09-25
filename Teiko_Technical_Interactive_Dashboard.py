@@ -75,6 +75,14 @@ cell_freq["percentage"] = (
     cell_freq["count"] / cell_freq["total_count"]
 ) * 100
 
+cell_freq["population"] = pd.Categorical(
+    cell_freq["population"],
+    categories=cell_types,
+    ordered=True
+)
+
+cell_freq = cell_freq.sort_values(["sample", "population"])
+
 
 # Interactive filters
 st.subheader("Filter Results")
