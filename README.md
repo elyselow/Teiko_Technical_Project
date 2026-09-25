@@ -24,8 +24,6 @@ Note 1: Teiko_Technical_Assessment.ipynb is included in the GitHub repository fo
 
 Note 2: When running Teiko_Technical_Assessment.ipynb, Teiko_Technical_Assessment.py, or load_data.py, make sure that cell-count.csv is in the same directory
 
-Note 3: Running make pipeline may take a while to execute
-
-Note 4: If make dashboard is ever run before make pipeline, cell_counts.db will already be created in the repository environment since its creation is required in the dashboard code to make the dashboard URL. Thus, cell_counts.db must be removed from the Codespaces environment before make pipeline is run to prevent "table already exists" error. Dashboard URL can be clicked at any time without creation or required removal of cell_counts.db.
+Note 3: If make dashboard is ever run before make pipeline, cell_counts.db will already be created in the repository environment since its creation is required in the dashboard code to make the dashboard URL. Thus, cell_counts.db must be removed from the Codespaces environment before make pipeline is run to prevent "table already exists" error. Dashboard URL can be clicked at any time without creation or required removal of cell_counts.db.
 
 Link to Dashboard: https://elyselow-teiko-tec-teiko-technical-interactive-dashboard-2wxzyg.streamlit.app/
