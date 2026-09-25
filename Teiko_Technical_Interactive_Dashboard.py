@@ -206,7 +206,7 @@ statistic, p_value = mannwhitneyu(
 )
 
 st.subheader(
-    f"Statistical Test for Difference in {population_name} "
+    f"Mann-Whitney U Test for Statistical Difference in {population_name} "
     "Relative Frequencies Between Responders vs. Non-responders"
 )
 
