@@ -20,7 +20,7 @@ Steps to Run Code:
 - streamlit: 1.64.0
 
 
-Note 1: Teiko_Technical_Assessment.ipynb is included in the GitHub repository for optional visual/debugging purposes and to show outputs more clearly (especially boxplots, which will not be shown just by running the Teiko_Technical_Assessment.py file due to the nature of the Codespace terminal but can be viewed in the Teiko_Technical_Assessment.ipynb file or the interactive dashboard).
+Note 1: Teiko_Technical_Assessment.ipynb is included in the GitHub repository for optional visual/debugging purposes and to show outputs more clearly (especially boxplots, which will not be shown just by running the Teiko_Technical_Assessment.py file due to the nature of the Codespaces terminal but can be viewed in the Teiko_Technical_Assessment.ipynb file or the interactive dashboard).
 
 Note 2: When running Teiko_Technical_Assessment.ipynb, Teiko_Technical_Assessment.py, or load_data.py, make sure that cell-count.csv is in the same directory
 
