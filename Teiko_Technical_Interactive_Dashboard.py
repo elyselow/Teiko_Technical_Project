@@ -81,7 +81,7 @@ cell_freq["population"] = pd.Categorical(
     ordered=True
 )
 
-cell_freq = cell_freq.sort_values(["sample", "population"])
+cell_freq = cell_freq.sort_values(["sample", "population"]).reset_index(drop=True)
 
 
 # Interactive filters
